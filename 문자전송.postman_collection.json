@@ -1,0 +1,1331 @@
+{
+	"info": {
+		"_postman_id": "f74553d8-4dc3-4020-8a55-3ffc689f1242",
+		"name": "문자전송",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24827265",
+		"_collection_link": "https://triupqa.postman.co/workspace/triup_QA-Workspace~82c3f0c6-65e5-4474-b313-9de92c879709/collection/24827265-f74553d8-4dc3-4020-8a55-3ffc689f1242?action=share&source=collection_link&creator=24827265"
+	},
+	"item": [
+		{
+			"name": "Accept",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"Accept\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        },\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken2}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CallSMS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"CallSMS\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CustomerSE",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"CustomerSE\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1800\",\r",
+							"            \"sendDateTime\": \"\",\r",
+							"            \"smsArgYn\": \"1\",\r",
+							"            \"adSmsArgYn\":\"1\",\r",
+							"            \"gender\": \"X\",\r",
+							"            \"usePoint\":\"1000\",\r",
+							"            \"myPoint\":\"1234\",\r",
+							"            \"accumalationPoint\":\"11121\",\r",
+							"        },\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CusNew",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"CusNew\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delay",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"Delay\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DictionaryQuestion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"DictionaryQuestion\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReservatonCancel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"ReservationCancel\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-76321\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"920111\",\r",
+							"            \"vistSn\": \"08\",\r",
+							"            \"reserveDate\": \"20240701\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"sendDateTime\": \"\",\r",
+							"            \"smsArgYn\": \"1\",\r",
+							"            \"adSmsArgYn\": \"1\",\r",
+							"            \"gender\": \"X\",\r",
+							"            \"usePoint\": \"1000\",\r",
+							"            \"myPoint\": \"12000\",\r",
+							"            \"accumalationPoint\": \"1000\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReservationChange",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"ReservationChange\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"// 요청 본문 설정\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReservationDay",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"ReservationDay\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReservationDayM",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"ReservationDayM\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20241029\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ReservationNow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"ReservationNow\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsePoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    'type': 'object',\r",
+							"    'properties': {\r",
+							"        'code': { 'type': 'integer' },\r",
+							"        'caption': { 'type': 'string' },\r",
+							"        'errors': { 'type': ['string','null']},\r",
+							"        'timestamp ': {'type': 'string'},\r",
+							"        'isSuccess ': {'type': 'string'},\r",
+							"    },\r",
+							"    'required': ['code','caption','errors','timestamp','isSuccess']\r",
+							"};\r",
+							"\r",
+							"const resJson = pm.response.json();\r",
+							"\r",
+							"pm.test('Check server status', function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check returned JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"    pm.expect(resJson).to.be.not.empty;\r",
+							"    pm.expect(resJson.code).to.be.eql(200);\r",
+							"    pm.expect(resJson.caption).to.be.eql(\"전송 성공\");\r",
+							"    pm.expect(resJson.errors).to.be.eql(null);\r",
+							"    pm.expect(resJson.isSuccess).to.be.eql(true);\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Check response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.request.headers.add({ key: 'Content-Type', value: 'application/json' });\r",
+							"\r",
+							"const schema = {\r",
+							"    \"sendMsgOption\": {\r",
+							"        \"isKakao\": true,\r",
+							"        \"isMsg\": true,\r",
+							"        \"templateCode\": \"UsePoint\",\r",
+							"        \"ykiho\": \"22222222\"\r",
+							"    },\r",
+							"    \"sendPatients\": [\r",
+							"        {\r",
+							"            \"ykiho\": \"22222222\",\r",
+							"            \"patNo\": \"0000002351\",\r",
+							"            \"mobileNo\": \"010-7441-7631\",\r",
+							"            \"patName\": \"김지헌\",\r",
+							"            \"jno\": \"951111\",\r",
+							"            \"vistSn\": \"00013\",\r",
+							"            \"reserveDate\": \"20240716\",\r",
+							"            \"reserveTime\": \"1100\",\r",
+							"            \"smsArgYn\": \"1\"\r",
+							"        }\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.request.body.update({\r",
+							"    mode: 'raw',\r",
+							"    raw: JSON.stringify(schema),\r",
+							"    options: {\r",
+							"        raw: {language: 'json'}\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://118.67.128.35/api/Biz/SendCrm",
+					"protocol": "http",
+					"host": [
+						"118",
+						"67",
+						"128",
+						"35"
+					],
+					"path": [
+						"api",
+						"Biz",
+						"SendCrm"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
