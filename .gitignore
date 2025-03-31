@@ -1,4 +1,2 @@
-env/
 node_modules/
-image/
 fuzzing.csv
