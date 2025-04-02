@@ -34,7 +34,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -114,7 +114,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -197,7 +197,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -277,7 +277,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -357,7 +357,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -438,7 +438,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -532,7 +532,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -613,7 +613,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -694,7 +694,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -774,7 +774,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -854,7 +854,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -934,7 +934,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1014,7 +1014,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1094,7 +1094,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1174,7 +1174,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1254,7 +1254,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1334,7 +1334,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1414,7 +1414,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1494,7 +1494,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1574,7 +1574,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1660,7 +1660,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -1765,7 +1765,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    \"type\": \"object\",\r",
 													"    \"properties\":{\r",
 													"            \"status\": {'type':\"string\"},\r",
@@ -1888,7 +1888,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'integer' },\r",
@@ -1956,7 +1956,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -2048,7 +2048,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const schema = {",
+											"let schema = {",
 											"    'type': 'object',",
 											"    'properties': {",
 											"        'status': { 'type': 'string' },",
@@ -2061,7 +2061,7 @@
 											"const resJson = pm.response.json();",
 											"const testDescription = `2.2 정상계정 로그인`",
 											"",
-											"const testServerStatus = eval(pm.globals.get(\"testServerStatus\"));",
+											"const testServerStatus = eval(pm.globals.get(\"testSucessServerStatus\"));",
 											"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));",
 											"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));",
 											"const testJsonData = eval(pm.collectionVariables.get(`testSucessJsonData`));",
@@ -2261,7 +2261,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const schema = {",
+											"let schema = {",
 											"    'type': 'object',",
 											"    'properties': {",
 											"        'status': { 'type': 'string' },",
@@ -2338,7 +2338,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const schema = { ",
+											"let schema = { ",
 											"    'type':'object',",
 											"    'properties' : { ",
 											"       'status' : {'type': 'integer'},",
@@ -2350,7 +2350,7 @@
 											"const resJson = pm.response.json();",
 											"const testDescription = `2.2.4 데이터 미입력 상태 로그인`",
 											"",
-											"const testServerStatus = eval(pm.globals.get(\"testServerStatus\"));",
+											"const testServerStatus = eval(pm.globals.get(\"testSucessServerStatus\"));",
 											"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));",
 											"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));",
 											"const testJsonData = eval(pm.collectionVariables.get(`testValidateMissingRequiredData`));",
@@ -2411,13 +2411,13 @@
 							"response": []
 						},
 						{
-							"name": "2.2.5 권한미보유 사용자 로그인",
+							"name": "2.2.5 초기화 비밀번호 확인",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const schema = {",
+											"let schema = {",
 											"    'type': 'object',",
 											"    'properties': {",
 											"        'status': { 'type': 'string' },",
@@ -2427,83 +2427,7 @@
 											"};",
 											"",
 											"const resJson = pm.response.json();",
-											"const testDescription = `2.2.4 권한없는 사용자 로그인`",
-											"",
-											"const testUnauthorizedResponseServerStatus = eval(pm.globals.get(\"testUnauthorizedResponseServerStatus\"));",
-											"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));",
-											"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));",
-											"const testInvalidPasswordLoginData = eval(pm.collectionVariables.get(`testInvalidPasswordLoginData`));",
-											"",
-											"testUnauthorizedResponseServerStatus(`${testDescription}`);",
-											"testResponseTime(`${testDescription}`);",
-											"testHttpsProtocol(`${testDescription}`);",
-											"testInvalidPasswordLoginData(`${testDescription}`, resJson, schema);"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
-											"\r",
-											"pm.request.body = { \r",
-											"    'mode' : 'urlencoded',\r",
-											"    'urlencoded' : [\r",
-											"        {key : 'ykiho',value: '22222222'},\r",
-											"        {key : 'userId',value: pm.environment.get('accUserId')},\r",
-											"        {key : 'userPw',value: pm.environment.get('accUserPw')}\r",
-											"    ]\r",
-											"};"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "bearer"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Origin",
-										"value": ""
-									}
-								],
-								"url": {
-									"raw": "{{domain}}/login",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"login"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "2.2.6 초기화 비밀번호 확인",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const schema = {",
-											"    'type': 'object',",
-											"    'properties': {",
-											"        'status': { 'type': 'string' },",
-											"        'result': { 'type': 'string' },",
-											"    },",
-											"    'required': ['status','result']",
-											"};",
-											"",
-											"const resJson = pm.response.json();",
-											"const testDescription = `2.2.6 초기화 비밀번호 계정 로그인`",
+											"const testDescription = `2.2.5 초기화 비밀번호 계정 로그인`",
 											"",
 											"",
 											"const testUnauthorizedResponseServerStatus = eval(pm.globals.get(\"testUnauthorizedResponseServerStatus\"));",
@@ -2564,13 +2488,13 @@
 							"response": []
 						},
 						{
-							"name": "2.2.7 사용중지 계정 로그인",
+							"name": "2.2.6 사용중지 계정 로그인",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const schema = {",
+											"let schema = {",
 											"    'type': 'object',",
 											"    'properties': {",
 											"        'status': { 'type': 'string' },",
@@ -2580,7 +2504,7 @@
 											"};",
 											"",
 											"const resJson = pm.response.json();",
-											"const testDescription = `2.2.7 사용중지 사용자 로그인`",
+											"const testDescription = `2.2.6 사용중지 사용자 로그인`",
 											"",
 											"const testUnauthorizedResponseServerStatus = eval(pm.globals.get(\"testUnauthorizedResponseServerStatus\"));",
 											"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));",
@@ -2666,6 +2590,395 @@
 				{
 					"name": "3.환자 접수",
 					"item": [
+						{
+							"name": "3.1 접수",
+							"item": [
+								{
+									"name": "3.0 접수",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    mode : 'urlencoded',\r",
+													"    urlencoded : [\r",
+													"        {key:'patNm', value: pm.collectionVariables.get('PAT_NM')}, \r",
+													"        {key:'mobile', value: pm.collectionVariables.get('MOBILE_NO')}\r",
+													"    ]\r",
+													"}\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type': 'object',\r",
+													"    'properties': {\r",
+													"        'status': {'type':'string'},\r",
+													"        'result': {'type':'string'},\r",
+													"    },\r",
+													"    'required': ['status', 'result']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `3.0 접수`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
+													"\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/ptnt/receipt/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"ptnt",
+												"receipt",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3.0.1 모든값 접수",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    mode : 'urlencoded',\r",
+													"    urlencoded : [\r",
+													"        {key:'patNo', value: pm.collectionVariables.get('PAT_NO')}, \r",
+													"        {key:'patNm', value: pm.collectionVariables.get('PAT_NM')}, \r",
+													"        {key:'jNo', value: pm.collectionVariables.get('PAT_JNO')}, \r",
+													"        {key:'diagFldCd', value: 'CD0017'},\r",
+													"        {key:'mobile', value: pm.collectionVariables.get('MOBILE_NO')},\r",
+													"        {key:'addr', value: pm.collectionVariables.get('ADDR')},\r",
+													"        {key:'vstPthCd', value: 'CD0016'},\r",
+													"        {key:'smsYn', value: '1'},\r",
+													"        {key:'adSmsYn', value: '1'},\r",
+													"        {key:'prsnYn', value: '1'},\r",
+													"    ]\r",
+													"}\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type': 'object',\r",
+													"    'properties': {\r",
+													"        'status': {'type':'string'},\r",
+													"        'result': {'type':'string'},\r",
+													"    },\r",
+													"    'required': ['status', 'result']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `3.0.1 모든값 입력 상태로 접수`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/ptnt/receipt/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"ptnt",
+												"receipt",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3.0.2 미입력 접수",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    mode : 'urlencoded',\r",
+													"    urlencoded : [\r",
+													"        {key:'patNo', value:''}, \r",
+													"        {key:'patNm', value: ''}, \r",
+													"    ]\r",
+													"}\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type': 'object',\r",
+													"    'properties': {\r",
+													"        'status': {'type':'string'},\r",
+													"        'result': {'type':'string'},\r",
+													"    },\r",
+													"    'required': ['status', 'result']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `3.0.2 필수값 미입력 접수`\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testValidateMissingRequiredData = eval(pm.collectionVariables.get(\"testValidateMissingRequiredData\"));\r",
+													"\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testValidateMissingRequiredData(`${testDescription}`, resJson, schema);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/ptnt/receipt/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"ptnt",
+												"receipt",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3.0.3 오입력 접수 / 확인필요",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    mode : 'urlencoded',\r",
+													"    urlencoded : [\r",
+													"        {key:'patNm', value: 'ERROR'}, \r",
+													"        {key:'mobile', value: 'ERROR'},\r",
+													"    ]\r",
+													"}\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type': 'object',\r",
+													"    'properties': {\r",
+													"        'status': {'type':'string'},\r",
+													"        'result': {'type':'string'},\r",
+													"        'data': {'type':'array'},\r",
+													"    },\r",
+													"    'required': ['status', 'result', 'data']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `3.0.3 필수값 오입력 접수`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testValidateMissingRequiredData = eval(pm.collectionVariables.get(\"testValidateMissingRequiredData\"));\r",
+													"\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testValidateMissingRequiredData(`${testDescription}`, resJson, schema);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/ptnt/receipt/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"ptnt",
+												"receipt",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "3.0.4 변조토큰 접수",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    mode : 'urlencoded',\r",
+													"    urlencoded : [\r",
+													"        {key:'patNm', value: pm.collectionVariables.get('PAT_NM')}, \r",
+													"        {key:'mobile', value: pm.collectionVariables.get('MOBILE_NO')}\r",
+													"    ]\r",
+													"}\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const testDescription = `3.0.4 변조토큰 사용하여 접수`;\r",
+													"\r",
+													"const testFailServerStatus = eval(pm.globals.get(`testFailServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"\r",
+													"testFailServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken2}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/ptnt/receipt/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"ptnt",
+												"receipt",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
 						{
 							"name": "3.1 이름/핸드폰번호로 내원여부 확인",
 							"item": [
@@ -3177,7 +3490,7 @@
 													"}\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
-													"const testDescription = `3.1 이름/핸드폰번호 내원여부 확인`\r",
+													"const testDescription = `3.2 이름/핸드폰번호 내원여부 확인`\r",
 													" \r",
 													"const testSucessServerStatus = eval(pm.globals.get(\"testSucessServerStatus\"));\r",
 													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
@@ -4309,405 +4622,6 @@
 									"response": []
 								}
 							]
-						},
-						{
-							"name": "3.5 접수",
-							"item": [
-								{
-									"name": "3.5 접수",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
-													"\r",
-													"// pm.request.body = {\r",
-													"//     mode : 'urlencoded',\r",
-													"//     urlencoded : [\r",
-													"//         {key:'patNm', value: pm.collectionVariables.get('PAT_NM')}, \r",
-													"//         {key:'mobile', value: pm.collectionVariables.get('MOBILE_NO')}\r",
-													"//     ]\r",
-													"// }\r",
-													"\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    mode : 'urlencoded',\r",
-													"    urlencoded : [\r",
-													"        {key:'patNm', value: \"김신황\"},\r",
-													"        {key:'mobile', value: \"010-7441-7631\"}\r",
-													"    ]\r",
-													"}\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type': 'object',\r",
-													"    'properties': {\r",
-													"        'status': {'type':'string'},\r",
-													"        'result': {'type':'string'},\r",
-													"    },\r",
-													"    'required': ['status', 'result']\r",
-													"}\r",
-													"\r",
-													"const resJson = pm.response.json();\r",
-													"const testDescription = `3.6 접수`\r",
-													"\r",
-													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
-													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
-													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
-													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
-													"\r",
-													"\r",
-													"testSucessServerStatus(`${testDescription}`);\r",
-													"testResponseTime(`${testDescription}`);\r",
-													"testHttpsProtocol(`${testDescription}`);\r",
-													"testSucessJsonData(`${testDescription}`, resJson, schema);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": []
-										},
-										"url": {
-											"raw": "{{domain}}/ptnt/receipt/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"ptnt",
-												"receipt",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "3.5.1 모든값 접수",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    mode : 'urlencoded',\r",
-													"    urlencoded : [\r",
-													"        {key:'patNo', value: pm.collectionVariables.get('PAT_NO')}, \r",
-													"        {key:'patNm', value: pm.collectionVariables.get('PAT_NM')}, \r",
-													"        {key:'jNo', value: pm.collectionVariables.get('PAT_JNO')}, \r",
-													"        {key:'diagFldCd', value: 'CD0017'},\r",
-													"        {key:'mobile', value: pm.collectionVariables.get('MOBILE_NO')},\r",
-													"        {key:'addr', value: pm.collectionVariables.get('ADDR')},\r",
-													"        {key:'vstPthCd', value: 'CD0016'},\r",
-													"        {key:'smsYn', value: '1'},\r",
-													"        {key:'adSmsYn', value: '1'},\r",
-													"        {key:'prsnYn', value: '1'},\r",
-													"    ]\r",
-													"}\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type': 'object',\r",
-													"    'properties': {\r",
-													"        'status': {'type':'string'},\r",
-													"        'result': {'type':'string'},\r",
-													"    },\r",
-													"    'required': ['status', 'result']\r",
-													"}\r",
-													"\r",
-													"const resJson = pm.response.json();\r",
-													"const testDescription = `3.5.2 모든값 입력 상태로 접수`\r",
-													"\r",
-													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
-													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
-													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
-													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
-													"\r",
-													"testSucessServerStatus(`${testDescription}`);\r",
-													"testResponseTime(`${testDescription}`);\r",
-													"testHttpsProtocol(`${testDescription}`);\r",
-													"testSucessJsonData(`${testDescription}`, resJson, schema);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": []
-										},
-										"url": {
-											"raw": "{{domain}}/ptnt/receipt/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"ptnt",
-												"receipt",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "3.5.2 미입력 접수",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    mode : 'urlencoded',\r",
-													"    urlencoded : [\r",
-													"        {key:'patNo', value:''}, \r",
-													"        {key:'patNm', value: ''}, \r",
-													"    ]\r",
-													"}\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type': 'object',\r",
-													"    'properties': {\r",
-													"        'status': {'type':'string'},\r",
-													"        'result': {'type':'string'},\r",
-													"    },\r",
-													"    'required': ['status', 'result']\r",
-													"}\r",
-													"\r",
-													"const resJson = pm.response.json();\r",
-													"const testDescription = `3.5.2 필수값 미입력 접수`\r",
-													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
-													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
-													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
-													"const testValidateMissingRequiredData = eval(pm.collectionVariables.get(\"testValidateMissingRequiredData\"));\r",
-													"\r",
-													"\r",
-													"testSucessServerStatus(`${testDescription}`);\r",
-													"testResponseTime(`${testDescription}`);\r",
-													"testHttpsProtocol(`${testDescription}`);\r",
-													"testValidateMissingRequiredData(`${testDescription}`, resJson, schema);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": []
-										},
-										"url": {
-											"raw": "{{domain}}/ptnt/receipt/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"ptnt",
-												"receipt",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "3.5.3 오입력 접수 / 확인필요",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    mode : 'urlencoded',\r",
-													"    urlencoded : [\r",
-													"        {key:'patNm', value: '1-1'}, \r",
-													"        {key:'mobile', value: '1-1'},\r",
-													"    ]\r",
-													"}\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type': 'object',\r",
-													"    'properties': {\r",
-													"        'status': {'type':'string'},\r",
-													"        'result': {'type':'string'},\r",
-													"        'data': {'type':'array'},\r",
-													"    },\r",
-													"    'required': ['status', 'result', 'data']\r",
-													"}\r",
-													"\r",
-													"const resJson = pm.response.json();\r",
-													"const testDescription = `3.5.3 필수값 오입력 접수`\r",
-													"\r",
-													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
-													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
-													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
-													"const testValidateMissingRequiredData = eval(pm.collectionVariables.get(\"testValidateMissingRequiredData\"));\r",
-													"\r",
-													"\r",
-													"testSucessServerStatus(`${testDescription}`);\r",
-													"testResponseTime(`${testDescription}`);\r",
-													"testHttpsProtocol(`${testDescription}`);\r",
-													"testValidateMissingRequiredData(`${testDescription}`, resJson, schema);"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": []
-										},
-										"url": {
-											"raw": "{{domain}}/ptnt/receipt/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"ptnt",
-												"receipt",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "3.5.4 변조토큰 접수",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    mode : 'urlencoded',\r",
-													"    urlencoded : [\r",
-													"        {key:'patNm', value: pm.collectionVariables.get('PAT_NM')}, \r",
-													"        {key:'mobile', value: pm.collectionVariables.get('MOBILE_NO')}\r",
-													"    ]\r",
-													"}\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const testDescription = `3.5.4 변조토큰 사용하여 접수`;\r",
-													"\r",
-													"const testFailServerStatus = eval(pm.globals.get(`testFailServerStatus`));\r",
-													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
-													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
-													"\r",
-													"testFailServerStatus(`${testDescription}`);\r",
-													"testResponseTime(`${testDescription}`);\r",
-													"testHttpsProtocol(`${testDescription}`);\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken2}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": []
-										},
-										"url": {
-											"raw": "{{domain}}/ptnt/receipt/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"ptnt",
-												"receipt",
-												""
-											]
-										}
-									},
-									"response": []
-								}
-							]
 						}
 					],
 					"event": [
@@ -4746,7 +4660,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"schema = {\r",
+													"const schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -5211,7 +5125,7 @@
 													"    let currentArr = resJson.data[index]\r",
 													"    for(let item of currentArr){\r",
 													"        if(item.PAT_NO === pm.collectionVariables.get('PAT_NO')){\r",
-													"            resultArr.push(item)\r",
+													"            resultArr.push(item);\r",
 													"        }\r",
 													"    }\r",
 													"}\r",
@@ -5219,9 +5133,9 @@
 													"let randomArr = resultArr[Math.floor(Math.random() * resultArr.length)];\r",
 													"\r",
 													"if (randomArr != []){\r",
-													"    pm.collectionVariables.set(\"VIST_SN\", randomArr.VIST_SN)\r",
-													"    pm.collectionVariables.set(\"MOPR_CD\", randomArr.MOPR_TP_CD)\r",
-													"    pm.collectionVariables.set(\"MOPR_NM\", randomArr.MOPR_TP_NM)\r",
+													"    pm.collectionVariables.set(\"VIST_SN\", randomArr.VIST_SN);\r",
+													"    pm.collectionVariables.set(\"MOPR_CD\", randomArr.MOPR_TP_CD);\r",
+													"    pm.collectionVariables.set(\"MOPR_NM\", randomArr.MOPR_TP_NM);\r",
 													"}"
 												],
 												"type": "text/javascript",
@@ -5361,7 +5275,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const resJson = pm.response.json();\r",
+													"\r",
 													"\r",
 													"const schema = {\r",
 													"    'type': 'object',\r",
@@ -5382,6 +5296,8 @@
 													"    },\r",
 													"    'required': ['status', 'result', 'data']\r",
 													"};\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
 													"\r",
 													"pm.test(\"Check server status\", () => {\r",
 													"    pm.response.to.have.status(200);\r",
@@ -5513,7 +5429,6 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"\r",
 													"schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
@@ -5592,8 +5507,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"\r",
-													"const schema = {\r",
+													"schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -5653,7 +5567,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -5782,7 +5696,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -5907,7 +5821,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -6062,7 +5976,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -11410,7 +11324,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const schema = {",
+													"const responseSchema = {",
 													"'type':'object',",
 													"    'properties':{",
 													"        'status':{'type':'string'},",
@@ -11457,7 +11371,7 @@
 													"    pm.response.to.be.json;",
 													"    pm.expect(resJson).to.be.not.empty;",
 													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);",
-													"    pm.response.to.have.jsonSchema(schema);",
+													"    pm.response.to.have.jsonSchema(responseSchema);",
 													"})",
 													"",
 													"pm.test(\"Check response time\", function () {",
