@@ -5275,9 +5275,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"\r",
-													"\r",
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -5298,25 +5296,17 @@
 													"};\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.1.2 날짜 오입력 환자 조회`\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
 													"\r",
-													"pm.test(\"Check returned JSON\", () =>{\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.equals(\"200\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -5928,13 +5918,15 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(404);\r",
-													"});\r",
+													"const testDescription = `4.4.1 환자 상세 정보 미입력 상태 조회`\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
+													"const testNotFoundResponseServerStatus = eval(pm.globals.get(`testNotFoundResponseServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"\r",
+													"testNotFoundResponseServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
 													""
 												],
 												"type": "text/javascript",
@@ -5985,10 +5977,8 @@
 													"    'required': ['status','result']\r",
 													"};\r",
 													"\r",
-													"\r",
 													"const resJson = pm.response.json();\r",
 													"const testDescription = `4.4.2 파라미터 오입력 환자 상세 조회`;\r",
-													"\r",
 													"\r",
 													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
 													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
@@ -6190,13 +6180,15 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(404);\r",
-													"});\r",
+													"const testDescription = `4.5.1 환자 예약 정보 미입력 상태 조회`\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
+													"const testNotFoundResponseServerStatus = eval(pm.globals.get(`testNotFoundResponseServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"\r",
+													"testNotFoundResponseServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
 													""
 												],
 												"type": "text/javascript",
@@ -6472,13 +6464,15 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(404);\r",
-													"});\r",
+													"const testDescription = `4.6.1 환자 정보 미입력 상태 조회`\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
+													"const testNotFoundResponseServerStatus = eval(pm.globals.get(`testNotFoundResponseServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"\r",
+													"testNotFoundResponseServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
 													""
 												],
 												"type": "text/javascript",
@@ -7424,13 +7418,15 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(404);\r",
-													"});\r",
+													"const testDescription = `4.8.2 환자 정보 미입력 상태 조회`\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
+													"const testNotFoundResponseServerStatus = eval(pm.globals.get(`testNotFoundResponseServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"\r",
+													"testNotFoundResponseServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
 													""
 												],
 												"type": "text/javascript",
@@ -7587,7 +7583,7 @@
 											"urlencoded": []
 										},
 										"url": {
-											"raw": "{{domain}}/ptnt/memo/{{PAT_NO}}/?vistSn=00064",
+											"raw": "{{domain}}/ptnt/memo/{{PAT_NO}}/?vistSn=00275",
 											"host": [
 												"{{domain}}"
 											],
@@ -7600,7 +7596,7 @@
 											"query": [
 												{
 													"key": "vistSn",
-													"value": "00064"
+													"value": "00275"
 												}
 											]
 										}
@@ -7654,7 +7650,7 @@
 													"\r",
 													"testSucessServerStatus(`${testDescription}`);\r",
 													"testResponseTime(`${testDescription}`);\r",
-													"testHttpsProtocol(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);e\r",
 													"testSucessJsonData(`${testDescription}`, resJson, schema);\r",
 													""
 												],
@@ -7884,7 +7880,7 @@
 													"}\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
-													"const testDescription = `4.9 진료메모 조회`;\r",
+													"const testDescription = `4.10 진료메모 저장`;\r",
 													"\r",
 													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
 													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
@@ -7894,7 +7890,8 @@
 													"testSucessServerStatus(`${testDescription}`);\r",
 													"testResponseTime(`${testDescription}`);\r",
 													"testHttpsProtocol(`${testDescription}`);\r",
-													"testSucessJsonData(`${testDescription}`, resJson, schema);"
+													"testSucessJsonData(`${testDescription}`, resJson, schema);\r",
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -7953,23 +7950,17 @@
 													"}\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.10.1 필수갑 미입력 진료메모 저장`;\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testValidateMissingRequiredData = eval(pm.collectionVariables.get(\"testValidateMissingRequiredData\"));\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"400\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"필수 데이터 누락\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													""
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testValidateMissingRequiredData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8019,7 +8010,7 @@
 											"script": {
 												"exec": [
 													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(404);\r",
+													"    pm.response.to.have.status(200);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Check response time\", () => {\r",
@@ -8130,9 +8121,6 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const resJson = pm.response.json();\r",
-													"const userData =  resJson.data.length > 0 ? Object.keys(resJson.data[0]).map(val => val) : [];\r",
-													"\r",
 													"const schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
@@ -8168,31 +8156,31 @@
 													"                    'PRGR_STAT_CD_NM' : {'type' : 'string'},\r",
 													"                }\r",
 													"            },\r",
-													"                    'required': userData,\r",
+													"            'required': [\r",
+													"                'VIST_SN','ACPT_MEMO','RSRV_DD','RSRV_TM','STR_RSRV_DD',\r",
+													"                'STR_RSRV_TM','RSRV_ONO','RSRV_MEMO','RSRV_CNCL_YN','RSRV_CFR_ID',\r",
+													"                'RSRC_CFR_NM','CHRG_DR_ID','CHRG_DR_NM','MOPR_TP_CD','MOPR_TP_CD_NM',\r",
+													"                'DIAG_FLD_CD','DIAG_FLD_CD_NM','KKO_INST_YN','KKO_VIST_BF_YN','KKO_VIST_DD_YN',\r",
+													"                'PRDC_TM','STR_PRDC_TM','PRGR_STAT_CD_NM'\r",
+													"            ],\r",
 													"        },\r",
 													"    },\r",
 													"    'required': ['status', 'result', 'data'],\r",
 													"}\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.11 진료일자 별 예약 내역`;\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", () => {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);\r",
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8297,22 +8285,17 @@
 													"}\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.11.1 진료일자 별 예약 내역`;\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonEmptyData = eval(pm.collectionVariables.get(\"testSucessJsonEmptyData\"));\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonEmptyData(`${testDescription}`, resJson, schema);\r",
 													""
 												],
 												"type": "text/javascript",
@@ -8417,8 +8400,6 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const resJson = pm.response.json();\r",
-													"const userData = resJson.data.length > 0 ? Object.keys(resJson.data[0]).map(val => val) : [];\r",
 													"\r",
 													"const schema = {\r",
 													"    'type': 'object',\r",
@@ -8430,34 +8411,41 @@
 													"            'type': 'array',\r",
 													"            'items': {\r",
 													"                'type': 'object',\r",
-													"                'properties': \r",
-													"                    Object.fromEntries(userData.map(prop => [prop, { 'type': ['string', 'null']}])),\r",
-													"                    'required': userData,\r",
-													"                },\r",
+													"                'properties':{\r",
+													"                    \"VIST_SN\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_DT\": {\"type\" : \"string\"},\r",
+													"                    \"STR_CNST_DD\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_RSLT\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_MEMO\": {\"type\" : \"string\"},\r",
+													"                    \"ASST_MEMO\": {\"type\" : [\"null\",\"string\"]},\r",
+													"                    \"CNST_ID\": {\"type\" : \"string\"},\r",
+													"                    \"ACPT_CFR_ID\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_NM\": {\"type\" : \"string\"},\r",
+													"                    \"ACPT_CFR_NM\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_RSLT_NM\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_CTGR_DIV\": {\"type\" : \"string\"},\r",
+													"                },'required': [\r",
+													"                    \"VIST_SN\",\"CNST_DT\",\"STR_CNST_DD\",\"CNST_RSLT\",\"CNST_MEMO\",'ASST_MEMO',\r",
+													"                    'CNST_ID','ACPT_CFR_ID','CNST_NM','ACPT_CFR_NM','CNST_RSLT_NM','CNST_CTGR_DIV'\r",
+													"                    \r",
+													"                ]},\r",
 													"            },\r",
 													"        },\r",
 													"    'required': ['status', 'result', 'data'],\r",
 													"}\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.12 진료일자 별 상담 내역`;\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", () => {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8557,23 +8545,17 @@
 													"}\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.12.2 파라미터 오입력 진료 일자별 상담 내역`;\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonEmptyData = eval(pm.collectionVariables.get(\"testSucessJsonEmptyData\"));\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													""
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonEmptyData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8677,9 +8659,6 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const resJson = pm.response.json();\r",
-													"const userData =  resJson.data.length > 0 ? Object.keys(resJson.data[0]).map(val => val) : [];\r",
-													"\r",
 													"let schema = {\r",
 													"        'type': 'object',\r",
 													"        'properties': {\r",
@@ -8690,9 +8669,17 @@
 													"                'type': 'array',\r",
 													"                'items': {\r",
 													"                    'type': 'object',\r",
-													"                    'properties': \r",
-													"                        Object.fromEntries(userData.map(val => [val, { 'type': ['string', 'null']}])),\r",
-													"                    'required': userData,\r",
+													"                    'properties': {\r",
+													"                        \"MOPR_NM\": {\"type\" : 'string'},\r",
+													"                        \"PRCHS_QTY\": {\"type\" : 'string'},\r",
+													"                        \"USE_QTY\": {\"type\" : 'string'},\r",
+													"                        \"REST_QTY\": {\"type\" : 'string'},\r",
+													"                        \"EXPDD\": {\"type\" : 'string'},\r",
+													"                        \"TOT_QTY\": {\"type\" : 'string'},\r",
+													"                        \"D_DD\": {\"type\" : 'string'},\r",
+													"                        \"RCPT_DT\": {\"type\" : 'string'},\r",
+													"                        },\r",
+													"                    'required': [\"MOPR_NM\",\"PRCHS_QTY\",\"USE_QTY\",\"REST_QTY\",\"EXPDD\",\"TOT_QTY\",'D_DD',\"RCPT_DT\"],\r",
 													"                }\r",
 													"            },\r",
 													"        },\r",
@@ -8700,25 +8687,18 @@
 													"    }\r",
 													"\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.14 티켓팅 목록`;\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", () => {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8815,24 +8795,19 @@
 													"    'required': ['status', 'result', 'data'],\r",
 													"}\r",
 													"\r",
+													"\r",
 													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.14.2 오입력 조회`;\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testEmptyJsonData = eval(pm.collectionVariables.get(\"testEmptyJsonData\"));\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"210\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"데이터 없음\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													""
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testEmptyJsonData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -8934,12 +8909,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const resJson = pm.response.json();\r",
-													"const userData = resJson.data.moprList.length > 0 ? Object.keys(resJson.data.moprList[0]).map(val => val) : [];\r",
-													"let schema = {};\r",
-													"\r",
-													"if(resJson.data.moprList.length > 0) {\r",
-													"    schema = {\r",
+													"let schema = {\r",
 													"        'type': 'object',\r",
 													"        'properties': {\r",
 													"            'status': { 'type': 'string' },\r",
@@ -8951,9 +8921,23 @@
 													"                        'type': 'array',\r",
 													"                        'items': {\r",
 													"                            'type': 'object',\r",
-													"                            'properties':\r",
-													"                                Object.fromEntries(userData.map(val => [val, { 'type': ['string', 'null']}])),\r",
-													"                            'required': userData\r",
+													"                            'properties':{\r",
+													"                                \"MOPR_CD\": {\"type\" : \"string\"},\r",
+													"                                \"MOPR_NM\": {\"type\" : \"string\"},\r",
+													"                                \"MOPR_NO\": {\"type\" : \"string\"},\r",
+													"                                \"RCPT_YN\": {\"type\" : \"string\"},\r",
+													"                                \"MOPR_ROOM_CD\": {\"type\" : \"string\"},\r",
+													"                                \"DR_ID\": {\"type\" : \"string\"},\r",
+													"                                \"ASST_ID\": {\"type\" : \"string\"},\r",
+													"                                \"ESTC_ID\": {\"type\" : \"string\"},\r",
+													"                                \"CHECK_YN\": {\"type\" : \"string\"},\r",
+													"                                \"MOPR_ROOM_CL\": {\"type\" : \"string\"},\r",
+													"                                \"CDDR\": {\"type\" : \"string\"},\r",
+													"                            },  \r",
+													"                            'required': [\r",
+													"                                \"MOPR_CD\", \"MOPR_NM\",\"MOPR_NO\",\"RCPT_YN\",\"MOPR_ROOM_CD\",\"DR_ID\",\r",
+													"                                \"ASST_ID\",\"ESTC_ID\",\"CHECK_YN\",\"MOPR_ROOM_CL\",\"CDDR\"\r",
+													"                            ]\r",
 													"                        }\r",
 													"                    }\r",
 													"                },\r",
@@ -8962,45 +8946,19 @@
 													"        },\r",
 													"        'required': ['status', 'result', 'data']\r",
 													"    };\r",
-													"} else {\r",
-													"schema = {\r",
-													"        'type': 'object',\r",
-													"        'properties': {\r",
-													"            'status': { 'type': 'string' },\r",
-													"            'result': { 'type': 'string' },\r",
-													"            'data': {\r",
-													"                'type': 'object',\r",
-													"                'properties': {\r",
-													"                    'moprList': {\r",
-													"                        'type': 'array',\r",
-													"                    }\r",
-													"                },\r",
-													"                'required': ['moprList']\r",
-													"            }\r",
-													"        },\r",
-													"        'required': ['status', 'result', 'data']\r",
-													"    };\r",
-													"}\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.15 시술 정보 조회`;\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
 													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", () => {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -9089,12 +9047,7 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const resJson = pm.response.json();\r",
-													"const userData = resJson.data.moprList.length > 0 ? Object.keys(resJson.data.moprList[0]).map(val => val) : [];\r",
-													"\r",
-													"\r",
-													"\r",
-													"const schema = {\r",
+													"let schema = {\r",
 													"    'type': 'object',\r",
 													"    'properties': {\r",
 													"        'status': { 'type': 'string' },\r",
@@ -9112,22 +9065,18 @@
 													"    'required': ['status', 'result', 'data']\r",
 													"};\r",
 													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `4.15.2 시술 정보 파라미터 미입력 조회`;\r",
 													"\r",
-													"pm.test(\"Check server status\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonEmptyData = eval(pm.collectionVariables.get(\"testSucessJsonEmptyData\"));\r",
 													"\r",
-													"pm.test(`Check returned JSON`, () => {\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", () => {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});"
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonEmptyData(`${testDescription}`, resJson, schema);"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -10057,21 +10006,9 @@
 													"     'properties' :{  \r",
 													"        'status' : {'type': 'string'},\r",
 													"        'result' : {'type': 'string'},\r",
-													"        'data' : { \r",
-													"            'type': 'array',\r",
-													"            'properties' : { \r",
-													"             'YKIHO' : {'type':'string'},\r",
-													"             'NOTICE_NO': {'type':'string'},\r",
-													"             'NOTICE_FD': {'type':'string'},\r",
-													"             'NOTICE_LD': {'type':'string'},\r",
-													"             'NOTICE_TXT':{'type':'string'},\r",
-													"             'CNCL_YN':{'type':'string'},\r",
-													"             'USER_NM':{'type':'string'},\r",
-													"             'SetDateTime':{'type':'string'},\r",
-													"            },\r",
-													"            'required' : ['YKIHO','NOTICE_NO','NOTICE_FD','NOTICE_LD','NOTICE_TXT','CNCL_YN','USER_NM','SetDateTime']\r",
-													"        },\r",
+													"        'data' : { 'type': 'array',},\r",
 													"    },\r",
+													"    'required' : ['status', 'result', 'data']\r",
 													"};\r",
 													"\r",
 													"const resJson = pm.response.json();\r",
@@ -10347,6 +10284,832 @@
 					]
 				},
 				{
+					"name": "8.동의서",
+					"item": [
+						{
+							"name": "8.1 동의서 템플릿 리스트 조회",
+							"item": [
+								{
+									"name": "8.1 동의서 템플릿 리스트 조회",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"https://chart-image.motionecosystem.com/Agreement/22222222/Template/22222222_피부시술_20241227_1450_00028_1.jpg\",\r",
+													"    method: \"GET\",\r",
+													"    responseType: \"arraybuffer\"\r",
+													"}, function (err, response) {\r",
+													"    if (err) {\r",
+													"        console.error(err);\r",
+													"    } else {\r",
+													"        pm.environment.set(\"imageData\", response.stream.toString('base64'));\r",
+													"        pm.environment.set(\"imageFilename\", \"downloaded_image.jpg\");\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type' : 'object',\r",
+													"    'properties' : {\r",
+													"        'status' : {'type' :'string'},\r",
+													"        'result' : {'type': 'string'},\r",
+													"        'data' : {\r",
+													"            'type': 'array',\r",
+													"            'items': { \r",
+													"                'type':'object',\r",
+													"                'properties' : {\r",
+													"                    'CNST_SN' : {'type' : 'string'},\r",
+													"                    'CNST_NM' : {'type' : ['string','null']},\r",
+													"                    'CNST_SEQ' : {'type' : 'string'},\r",
+													"                    'CNST_CD' : {'type' : 'string'},\r",
+													"                    'CNST_CD_NM' : {'type' : 'string'},\r",
+													"                    'CNST_URL' : {'type' : 'string'},\r",
+													"                    'TODAY_USE' : {'type' : 'string'},\r",
+													"                    'SEQ' : {'type': ['string','null']},\r",
+													"                    'COUNTLIST' : {'type': 'string'},\r",
+													"                },\r",
+													"            },\r",
+													"            'required' : ['CNST_SN','CNST_NM','CNST_SEQ','CNST_CD','CNST_CD_NM','CNST_URL','TODAT_USE','SEQ','COUNTLIST']\r",
+													"        },\r",
+													"    }, \r",
+													"    'required' : ['status', 'result', 'data']\r",
+													"};\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `8.1 동의서 템플릿 조회`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);\r",
+													"\r",
+													"let resData = resJson.data\r",
+													"let randomData = resData[Math.floor(Math.random() * resData.length)]\r",
+													"console.log(randomData)\r",
+													"pm.collectionVariables.set(\"CNST_SN\", randomData.CNST_SN)\r",
+													"pm.collectionVariables.set(\"CNST_NM\", randomData.CNST_NM)"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/cnst?patNo={{PAT_NO}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst"
+											],
+											"query": [
+												{
+													"key": "patNo",
+													"value": "{{PAT_NO}}"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.1.1 파라미터 미입력 조회",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type' : 'object',\r",
+													"    'properties' : {\r",
+													"        'status' : {'type' :'string'},\r",
+													"        'result' : {'type': 'string'},\r",
+													"        'data' : {'type': 'array' },\r",
+													"    }, \r",
+													"    'required' : ['status', 'result', 'data']\r",
+													"};\r",
+													"\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `8.1.1 파라미터 미입력 동의서 조회`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testEmptyJsonData = eval(pm.collectionVariables.get(\"testEmptyJsonData\"));\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testEmptyJsonData(`${testDescription}`, resJson, schema);\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{domain}}/cnst/?patNo=",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												""
+											],
+											"query": [
+												{
+													"key": "patNo",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.1.2 변조토큰",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const testDescription = `8.1.2 변조토큰 사용하여 동의서 템플릿 조회`;\r",
+													"\r",
+													"const testFailServerStatus = eval(pm.globals.get(`testFailServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"\r",
+													"testFailServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken2}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/?patNo={{PAT_NO}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												""
+											],
+											"query": [
+												{
+													"key": "patNo",
+													"value": "{{PAT_NO}}"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "8.2 동의서 저장",
+							"item": [
+								{
+									"name": "8.2 동의서 저장",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = { \r",
+													"    'type' : 'object',\r",
+													"    'properties' : {\r",
+													"        'status' : {'type': 'string'},\r",
+													"        'result' : {'type': 'string'},\r",
+													"    },\r",
+													"    'required' : ['patNo', 'vistSn','cnstSn','pageNo','cnstImage']\r",
+													"}\r",
+													"\r",
+													"pm.test(\"서버상태 ok\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													" \r",
+													"pm.test(\"응답 상태 ok\", function(){\r",
+													"    pm.expect(pm.response.json().status).to.oneOf([\"200\",\"210\"]);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"schema check\", function(){\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const newFormData = pm.request.body.formdata.map(item => ({ ...item }));\r",
+													"newFormData.push({ key: 'cnstSn', value: pm.collectionVariables.get(\"CNST_SN\")});\r",
+													"newFormData.push({ key: 'pageNo', value: '0'});\r",
+													"newFormData.push({ key: 'vistSn', value:pm.collectionVariables.get(\"VIST_SN\")})\r",
+													"newFormData.push({ key: 'cnstNm', value:pm.collectionVariables.get(\"CNST_NM\")})\r",
+													"newFormData.push({ key: 'cnstImage', type: 'file', src: 'C:/works/apiTest/image/TestImage1.jpg'});\r",
+													"\r",
+													"pm.request.body.formdata = newFormData;\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "patNo",
+													"value": "{{PAT_NO}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/cnst",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "8.6 동의서내역 조회",
+							"item": [
+								{
+									"name": "8.6 동의서내역 조회 > 확인필요",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"\r",
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties':{\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"        'data':{\r",
+													"            'type':'array',\r",
+													"            'items' :{\r",
+													"                'properties': {\r",
+													"                    \"CNST_DD_SN\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_TM\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_DD\": {\"type\" : \"string\"},\r",
+													"                    \"IMAGE_URL\": {\r",
+													"                        \"type\": \"array\",\r",
+													"                        \"items\": { \"type\": \"string\", \"format\": \"uri\" }\r",
+													"                    },\r",
+													"                    \"CNST_SN\": {\"type\" : \"string\"},\r",
+													"                    \"CNST_NM\": {\"type\" : \"string\"},\r",
+													"                    \"CTGR_CD\": {\"type\" : \"string\"},\r",
+													"                    \"CTGR_CD_NM\": {\"type\" : \"string\"},\r",
+													"                    \"PAGE_NO\": {\"type\" : \"string\"},\r",
+													"                },\r",
+													"            'required' : [\"CNST_DD_SN\",\"CNST_TM\",\"CNST_DD\",\"IMAGE_URL\",\"CNST_SN\",\"CNST_NM\",\"CTGR_CD\",\"CTGR_CD_NM\",\"PAGE_NO\"]\r",
+													"            },\r",
+													"        },\r",
+													"    },\r",
+													"    'required':['status','result','data']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `8.3 동의서 내역 조회`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/ptnt/{{PAT_NO}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"ptnt",
+												"{{PAT_NO}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.6.1 오입력 조회",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties':{\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"        'data':{\r",
+													"            'type':'array',\r",
+													"            'items' : {},\r",
+													"            }\r",
+													"        },\r",
+													"    'required':['status','result','data']\r",
+													"}\r",
+													"\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `8.3 동의서 내역 조회`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testEmptyJsonData = eval(pm.collectionVariables.get(\"testEmptyJsonData\"));\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testEmptyJsonData(`${testDescription}`, resJson, schema);"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/ptnt/{{PAT_NO}}111",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"ptnt",
+												"{{PAT_NO}}111"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.6.2 미입력 조회",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"pm.test(\"check 200\", function(){\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/ptnt/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"ptnt",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.6.3 변조토큰",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('Check server status', function () {\r",
+													"    pm.expect(pm.response.code).to.be.eql(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"packages": {},
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken2}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/ptnt/{{PAT_NO}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"ptnt",
+												"{{PAT_NO}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "8.10 동의서 클릭시 템플릿 조회",
+							"item": [
+								{
+									"name": "8.10 동의서 클릭시 템플릿 조회",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"let schema = {\r",
+													"    'type':'object',\r",
+													"    'properties':{\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"        'data':{\r",
+													"            'type':'array',\r",
+													"            'items': {\r",
+													"                'properties': {\r",
+													"                    'PAGE_NO': {'type': 'string'},\r",
+													"                    'CNST_URL': {'type': 'string'},\r",
+													"                    'COUNTLIST': {'type': 'integer'}\r",
+													"                },\r",
+													"            'required':['PAGE_NO','CNST_URL','COUNTLIST']\r",
+													"            },\r",
+													"        },\r",
+													"    },\r",
+													"    'required':['status','result','data']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"const testDescription = `8.4 동의서 클릭 템플릿 조회`\r",
+													"\r",
+													"const testSucessServerStatus = eval(pm.globals.get(`testSucessServerStatus`));\r",
+													"const testResponseTime = eval(pm.globals.get(\"testResponseTime\"));\r",
+													"const testHttpsProtocol = eval(pm.globals.get(\"testHttpsProtocol\"));\r",
+													"const testSucessJsonData = eval(pm.collectionVariables.get(\"testSucessJsonData\"));\r",
+													"\r",
+													"testSucessServerStatus(`${testDescription}`);\r",
+													"testResponseTime(`${testDescription}`);\r",
+													"testHttpsProtocol(`${testDescription}`);\r",
+													"testSucessJsonData(`${testDescription}`, resJson, schema);\r",
+													"\r",
+													"let resData = resJson.data\r",
+													"let randomData = resData[Math.floor(Math.random() * resData.length)]\r",
+													"console.log(randomData)\r",
+													"pm.collectionVariables.set(\"CNST_SN\", randomData.CNST_SN)\r",
+													"pm.collectionVariables.set(\"CNST_NM\", randomData.CNST_NM)"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/{{CNST_SN}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"{{CNST_SN}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.10.1 오입력 조회",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties':{\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"        'data':{\r",
+													"            'type':'array',\r",
+													"            'properties':{\r",
+													"                'CNST_IMG':{'type':'string'},\r",
+													"                'PAGE_NO':{'type':'string'},\r",
+													"            },\r",
+													"            'required':['CNST_IMG','PAGE_NO']\r",
+													"        },\r",
+													"    },\r",
+													"    'required':['status','result','data']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"\r",
+													"pm.test('Check server status', function () {\r",
+													"   pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check returned JSON\", () =>{\r",
+													"    pm.response.to.be.json;\r",
+													"    pm.expect(resJson).to.be.not.empty;\r",
+													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
+													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/{{CNST_SN}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"{{CNST_SN}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.10.2 미입력 조회",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties':{\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"        'data':{\r",
+													"            'type':'array',\r",
+													"            'properties':{\r",
+													"                'CNST_IMG':{'type':'string'},\r",
+													"                'PAGE_NO':{'type':'string'},\r",
+													"            },\r",
+													"            'required':['CNST_IMG','PAGE_NO']\r",
+													"        },\r",
+													"    },\r",
+													"    'required':['status','result','data']\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"\r",
+													"pm.test('Check server status', function () {\r",
+													"   pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check returned JSON\", () =>{\r",
+													"    pm.response.to.be.json;\r",
+													"    pm.expect(resJson).to.be.not.empty;\r",
+													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
+													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/{{CNST_SN}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"{{CNST_SN}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "8.10.3 변조토큰",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('Check server status', function () {\r",
+													"    pm.expect(pm.response.code).to.be.eql(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken2}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/cnst/{{CNST_SN}}",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"cnst",
+												"{{CNST_SN}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "9.차트",
 					"item": [
 						{
@@ -10457,344 +11220,6 @@
 											"path": [
 												"chart",
 												"package"
-											]
-										}
-									},
-									"response": []
-								}
-							]
-						},
-						{
-							"name": "9.2 상담 저장",
-							"item": [
-								{
-									"name": "9.2 상담 저장",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    'mode' : 'formdata',\r",
-													"    'formdata' : [\r",
-													"        {key:'patNo',value:pm.collectionVariables.get('PAT_NO')},\r",
-													"        {key:'vistSn',value: pm.collectionVariables.get('VIST_SN')},\r",
-													"        {key:'cnstRslt',value: pm.collectionVariables.get('CNST_RSLT')},\r",
-													"        {key:'cnstId',value: 'F12'},\r",
-													"        {key:'acptCfrId',value: '미지정'},\r",
-													"        {key:'chrgDrId',value: pm.collectionVariables.get('USER_ID')},\r",
-													"    ]\r",
-													"}"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type':'object',\r",
-													"    'properties': {\r",
-													"        'status':{'type':'string'},\r",
-													"        'result':{'type':'string'},\r",
-													"    }\r",
-													"}\r",
-													"\r",
-													"\r",
-													"pm.test('Check server status', function () {\r",
-													"    pm.expect(pm.response.code).to.be.eql(200);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check returned JSON\", () =>{\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Check response time\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{domain}}/chart/cnst/update/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"chart",
-												"cnst",
-												"update",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "9.2.1 모든값 입력",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    'mode' : 'formdata',\r",
-													"    'formdata' : [\r",
-													"        {key:'patNo',value:pm.collectionVariables.get('PAT_NO')},\r",
-													"        {key:'vistSn',value: pm.collectionVariables.get('VIST_SN')},\r",
-													"        {key:'cnstRslt',value: pm.collectionVariables.get('CNST_RSLT')},\r",
-													"        {key:'cnstMemo',value: '상담 테스트 메모'},\r",
-													"        {key:'asstMemo',value: '어시 테스트 메모'},\r",
-													"        {key:'cnstId',value: 'F12'},\r",
-													"        {key:'acptCfrId',value: '미지정'},\r",
-													"        {key:'chrgDrId',value: pm.collectionVariables.get('USER_ID')},\r",
-													"        {key:'cnstCtgrDiv',value: '1/2'},\r",
-													"        {key:'moprList',value: [\r",
-													"            {key:'moprCd',value:pm.collectionVariables.get('MOPR_CD')},\r",
-													"            {key:'moprNm',value:pm.collectionVariables.get('MOPR_NM')},\r",
-													"            {key:'czCd',value:pm.collectionVariables.get('CZ_CD')},\r",
-													"            {key:'itemCd',value:pm.collectionVariables.get('ITEM_CD')},\r",
-													"            {key:'vatYn',value:'0'},\r",
-													"            {key:'vat',value:'0'},\r",
-													"            {key:'amt',value:'20000'},\r",
-													"            {key:'addAmt',value:'0'},\r",
-													"            {key:'dcTpCd',value:''},\r",
-													"            {key:'dcAmt',value:'0'},\r",
-													"            {key:'prchsQty',value:'1'},\r",
-													"            {key:'useQty',value:'1'},\r",
-													"            {key:'restQty',value:'1'},\r",
-													"        ]},\r",
-													"    ]\r",
-													"}\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type':'object',\r",
-													"    'properties': {\r",
-													"        'status':{'type':'string'},\r",
-													"        'result':{'type':'string'},\r",
-													"    }\r",
-													"}\r",
-													"\r",
-													"\r",
-													"pm.test('Check server status', function () {\r",
-													"    pm.expect(pm.response.code).to.be.eql(200);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check returned JSON\", () =>{\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Check response time\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
-													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{domain}}/chart/cnst/update/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"chart",
-												"cnst",
-												"update",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "9.2.2 필수값 미입력",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    'mode' : 'formdata',\r",
-													"    'formdata' : [\r",
-													"    ]\r",
-													"}\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    'type':'object',\r",
-													"    'properties': {\r",
-													"        'status':{'type':'string'},\r",
-													"        'result':{'type':'string'},\r",
-													"    }\r",
-													"}\r",
-													"\r",
-													"const resJson = pm.response.json();\r",
-													"\r",
-													"pm.test('Check server status', function () {\r",
-													"    pm.expect(pm.response.code).to.be.eql(200);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check returned JSON\", () =>{\r",
-													"    pm.response.to.be.json;\r",
-													"    pm.expect(resJson).to.be.not.empty;\r",
-													"    pm.expect(resJson.status).to.be.eql('400');\r",
-													"    pm.expect(resJson.result).to.be.eql('필수 데이터 누락');\r",
-													"    pm.response.to.have.jsonSchema(schema);\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Check response time\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{domain}}/chart/cnst/update/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"chart",
-												"cnst",
-												"update",
-												""
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "9.2.3 변조토큰",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
-													"\r",
-													"pm.request.body = {\r",
-													"    'mode' : 'formdata',\r",
-													"    'formdata' : [\r",
-													"        {key:'patNo',value:pm.collectionVariables.get('PAT_NO')},\r",
-													"        {key:'vistSn',value: pm.collectionVariables.get('VIST_SN')},\r",
-													"        {key:'cnstRslt',value: pm.collectionVariables.get('CNST_RSLT')},\r",
-													"        {key:'cnstId',value: 'F12'},\r",
-													"        {key:'acptCfrId',value: '미지정'},\r",
-													"        {key:'chrgDrId',value: pm.collectionVariables.get('USER_ID')},\r",
-													"    ]\r",
-													"}\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test('Check server status', function () {\r",
-													"    pm.expect(pm.response.code).to.be.eql(500);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Check response time\", function () {\r",
-													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{accessToken2}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{domain}}/chart/cnst/update/",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"chart",
-												"cnst",
-												"update",
-												""
 											]
 										}
 									},
@@ -10920,7 +11345,13 @@
 													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
 													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
 													"});\r",
-													""
+													"\r",
+													"const cnstArr = resJson.data.cnst\r",
+													"let randomCnst = cnstArr[Math.floor(Math.random() * cnstArr.length)];\r",
+													"pm.collectionVariables.set('VIST_SN',randomCnst.VIST_SN)\r",
+													"pm.collectionVariables.set('CVST_RSLT',randomCnst.CNST_RSLT)\r",
+													"pm.collectionVariables.set('CNST_ID',randomCnst.CNST_ID)\r",
+													"pm.collectionVariables.set('ACPT_CFR_ID',randomCnst.ACPT_CFR_ID)"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -11307,6 +11738,343 @@
 													"key": "vistSn",
 													"value": "{{VIST_SN}}"
 												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "9.2 상담 저장",
+							"item": [
+								{
+									"name": "9.2 상담 저장",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    'mode' : 'formdata',\r",
+													"    'formdata' : [\r",
+													"        {key:'patNo',value:pm.collectionVariables.get('PAT_NO')},\r",
+													"        {key:'vistSn',value: pm.collectionVariables.get('VIST_SN')},\r",
+													"        {key:'cnstRslt',value: pm.collectionVariables.get('CNST_RSLT')},\r",
+													"        {key:'cnstId',value: 'CNST_ID'},\r",
+													"        {key:'acptCfrId',value: 'ACPT_CFR_ID'},\r",
+													"        {key:'chrgDrId',value: pm.collectionVariables.get('USER_ID')},\r",
+													"    ]\r",
+													"}"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties': {\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"pm.test('Check server status', function () {\r",
+													"    pm.expect(pm.response.code).to.be.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check returned JSON\", () =>{\r",
+													"    pm.response.to.be.json;\r",
+													"    pm.expect(resJson).to.be.not.empty;\r",
+													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
+													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/chart/cnst/update/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"chart",
+												"cnst",
+												"update",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "9.2.1 모든값 입력",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    'mode' : 'formdata',\r",
+													"    'formdata' : [\r",
+													"        {key:'patNo',value:pm.collectionVariables.get('PAT_NO')},\r",
+													"        {key:'vistSn',value: pm.collectionVariables.get('VIST_SN')},\r",
+													"        {key:'cnstRslt',value: pm.collectionVariables.get('CNST_RSLT')},\r",
+													"        {key:'cnstMemo',value: '상담 테스트 메모'},\r",
+													"        {key:'asstMemo',value: '어시 테스트 메모'},\r",
+													"        {key:'cnstId',value: 'F12'},\r",
+													"        {key:'acptCfrId',value: '미지정'},\r",
+													"        {key:'chrgDrId',value: pm.collectionVariables.get('USER_ID')},\r",
+													"        {key:'cnstCtgrDiv',value: '1/2'},\r",
+													"        {key:'moprList',value: [\r",
+													"            {key:'moprCd',value:pm.collectionVariables.get('MOPR_CD')},\r",
+													"            {key:'moprNm',value:pm.collectionVariables.get('MOPR_NM')},\r",
+													"            {key:'czCd',value:pm.collectionVariables.get('CZ_CD')},\r",
+													"            {key:'itemCd',value:pm.collectionVariables.get('ITEM_CD')},\r",
+													"            {key:'vatYn',value:'0'},\r",
+													"            {key:'vat',value:'0'},\r",
+													"            {key:'amt',value:'20000'},\r",
+													"            {key:'addAmt',value:'0'},\r",
+													"            {key:'dcTpCd',value:''},\r",
+													"            {key:'dcAmt',value:'0'},\r",
+													"            {key:'prchsQty',value:'1'},\r",
+													"            {key:'useQty',value:'1'},\r",
+													"            {key:'restQty',value:'1'},\r",
+													"        ]},\r",
+													"    ]\r",
+													"}\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties': {\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"\r",
+													"pm.test('Check server status', function () {\r",
+													"    pm.expect(pm.response.code).to.be.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check returned JSON\", () =>{\r",
+													"    pm.response.to.be.json;\r",
+													"    pm.expect(resJson).to.be.not.empty;\r",
+													"    pm.expect(resJson.status).to.have.oneOf([\"200\",\"210\"]);\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check HTTPS protocol usage\", function() {\r",
+													"    pm.expect(pm.request.url).to.match(/^https:/);\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/chart/cnst/update/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"chart",
+												"cnst",
+												"update",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "9.2.2 필수값 미입력",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    'mode' : 'formdata',\r",
+													"    'formdata' : [\r",
+													"    ]\r",
+													"}\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    'type':'object',\r",
+													"    'properties': {\r",
+													"        'status':{'type':'string'},\r",
+													"        'result':{'type':'string'},\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"const resJson = pm.response.json();\r",
+													"\r",
+													"pm.test('Check server status', function () {\r",
+													"    pm.expect(pm.response.code).to.be.eql(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check returned JSON\", () =>{\r",
+													"    pm.response.to.be.json;\r",
+													"    pm.expect(resJson).to.be.not.empty;\r",
+													"    pm.expect(resJson.status).to.be.eql('400');\r",
+													"    pm.expect(resJson.result).to.be.eql('필수 데이터 누락');\r",
+													"    pm.response.to.have.jsonSchema(schema);\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/chart/cnst/update/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"chart",
+												"cnst",
+												"update",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "9.2.3 변조토큰",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.request.headers.add({ key: 'Content-Type', value: 'multipart/form-data' });\r",
+													"\r",
+													"pm.request.body = {\r",
+													"    'mode' : 'formdata',\r",
+													"    'formdata' : [\r",
+													"        {key:'patNo',value:pm.collectionVariables.get('PAT_NO')},\r",
+													"        {key:'vistSn',value: pm.collectionVariables.get('VIST_SN')},\r",
+													"        {key:'cnstRslt',value: pm.collectionVariables.get('CNST_RSLT')},\r",
+													"        {key:'cnstId',value: 'F12'},\r",
+													"        {key:'acptCfrId',value: '미지정'},\r",
+													"        {key:'chrgDrId',value: pm.collectionVariables.get('USER_ID')},\r",
+													"    ]\r",
+													"}\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('Check server status', function () {\r",
+													"    pm.expect(pm.response.code).to.be.eql(500);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check response time\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000); \r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken2}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/chart/cnst/update/",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"chart",
+												"cnst",
+												"update",
+												""
 											]
 										}
 									},
@@ -12302,7 +13070,8 @@
 													"\r",
 													"const serviceList = ['필러','보톡스','보톡스,필러'];\r",
 													"const randomNum = Math.floor(Math.random() * 21)+1;\r",
-													"const imageUrl = \"C:/works/apiTest/image/\";\r",
+													"const imageUrl = pm.environment.get('IMAGE_PATH');\r",
+													"// const imageUrl = pm.collectionVariables.get('localImagePath');\r",
 													"const forNum = 21;\r",
 													"\r",
 													"const imageList = [];\r",
@@ -12395,7 +13164,7 @@
 													"        {key: 'memoTxt', value: ''},\r",
 													"        {key: 'imageTitle', value:''},\r",
 													"        {key: 'services', value:''},\r",
-													"        {key: 'memoImage', value:'C:/works/apiTest/image/'}\r",
+													"        {key: 'memoImage', value:pm.environment.get('localImagePath')}\r",
 													"    ]\r",
 													"}"
 												],
@@ -12490,7 +13259,7 @@
 													"        {key: 'memoTxt', value: '진료사진 상세'},\r",
 													"        {key: 'imageTitle', value:'진료사진 1'},\r",
 													"        {key: 'services', value:'보톡스'},\r",
-													"        {key: 'memoImage', value:'C:/works/apiTest/image/'}\r",
+													"        {key: 'memoImage', value:'./image/'}\r",
 													"    ]\r",
 													"}"
 												],
@@ -12584,7 +13353,7 @@
 													"        {key: 'memoTxt', value: 'test'},\r",
 													"        {key: 'imageTitle', value:'테스트 타이틀'},\r",
 													"        {key: 'services', value:'보톡스'},\r",
-													"        {key: 'memoImage', type:'file' ,src:'C:/works/apiTest/image/대용량.jpg'}\r",
+													"        {key: 'memoImage', type:'file' ,src: pm.environment.get('IMAGE_PATH')+ '대용량.jpg'}\r",
 													"    ]\r",
 													"}"
 												],
@@ -12610,8 +13379,8 @@
 													"});\r",
 													"\r",
 													"pm.test('Check returned JSON', function () {\r",
-													"    pm.expect(resJson.status).to.be.eql(\"400\");\r",
-													"    pm.expect(resJson.result).to.be.eql(\"필수 데이터 누락\");\r",
+													"    pm.expect(resJson.status).to.be.eql(\"200\");\r",
+													"    pm.expect(resJson.result).to.be.eql(\"성공\");\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Check response time\", function () {\r",
@@ -12795,7 +13564,10 @@
 													"const timeString = year + '-' + month  + '-' + day + \" \"+ hours + ':' + minutes  + ':' + seconds;\r",
 													"\r",
 													"const serviceList = ['필러','보톡스','보톡스,필러'];\r",
-													"const imageUrl = \"C:/works/apiTest/image/updateImage/\"\r",
+													"\r",
+													"const imageUrl = pm.environment.get('IMAGE_PATH')+'/updateImage/';\r",
+													"// const imageUrl = pm.collectionVariables.get('localImagePath')+'/updateImage/';\r",
+													"console.log(imageUrl)\r",
 													"const forNum = 11;\r",
 													"\r",
 													"const imageList = [];\r",
@@ -12822,13 +13594,15 @@
 													"newFormData.push({ key: 'imageTitle', value:'updateTitle : ' + timeString });\r",
 													"newFormData.push({ key: 'services', value: randomService});\r",
 													"newFormData.push({ key: 'memoImage', type: 'file', src: randomImage});\r",
-													"newFormData.push({ key: 'seq', value: pm.collectionVariables.get('IMAGE_SEQ')});\r",
+													"newFormData.push({ key: 'seq', value: pm.collectionVariables.get(\"IMAGE_SEQ\")});\r",
+													"\r",
+													"pm.request.body.formdata = newFormData;\r",
+													"pm.request.body.update(newFormData);\r",
 													"\r",
 													"pm.collectionVariables.set('MEMO_TXT', newFormData[1].value);\r",
 													"pm.collectionVariables.set('IMAGE_TITLE', newFormData[2].value);\r",
 													"pm.collectionVariables.set('randomService',randomService);\r",
-													"\r",
-													"pm.request.body.formdata = newFormData;"
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -12927,6 +13701,11 @@
 												{
 													"key": "patNo",
 													"value": "{{PAT_NO}}",
+													"type": "text"
+												},
+												{
+													"key": "seq",
+													"value": "{{IMAGE_SEQ}}",
 													"type": "text"
 												}
 											]
@@ -13141,7 +13920,7 @@
 													"        {key: 'memoTxt', value: 'test'},\r",
 													"        {key: 'imageTitle', value:'테스트 타이틀'},\r",
 													"        {key: 'services', value:'보톡스'},\r",
-													"        {key: 'memoImage', type:'file' ,src:'C:/works/apiTest/image/대용량.jpg'},\r",
+													"        {key: 'memoImage', type:'file' ,src:pm.environment.get(\"IMAGE_PATH\")},\r",
 													"        {key: 'seq', value:pm.collectionVariables.get(\"IMAGE_SEQ\")},\r",
 													"    ]\r",
 													"}"
@@ -13349,6 +14128,7 @@
 												"exec": [
 													"pm.request.headers.add({ key: 'Content-Type', value: 'application/x-www-form-urlencoded' });\r",
 													"\r",
+													"\r",
 													"pm.request.body = {\r",
 													"    mode : 'formdata',\r",
 													"    formdata : [\r",
@@ -13356,6 +14136,7 @@
 													"        {key:'seq', value:pm.collectionVariables.get('IMAGE_SEQ')},\r",
 													"    ]\r",
 													"}\r",
+													"\r",
 													""
 												],
 												"type": "text/javascript",
@@ -14159,8 +14940,8 @@
 													"const todayString = year+month+day;\r",
 													"\r",
 													"const randomNum = Math.floor(Math.random() * 24)+1;\r",
-													"\r",
-													"const imageUrl = \"C:/works/apiTest/image/\";\r",
+													"const imageUrl = pm.environment.get(\"IMAGE_PATH\");\r",
+													"// const imageUrl = pm.collectionVariables.get('localImagePath');\r",
 													"const imageList = [];\r",
 													"\r",
 													"const forNum = 21;\r",
@@ -14501,7 +15282,7 @@
 													"newFormData.push({ key: 'penCtCd', value: pm.collectionVariables.get('PENCT_CD') });\r",
 													"newFormData.push({ key: 'penCtNm', value: pm.collectionVariables.get('PENCT_NM') });\r",
 													"newFormData.push({ key: 'penCtMemo', value: '대용량 이미지 업로드' });\r",
-													"newFormData.push({ key: 'penCtImage', type: 'file', src: 'C:/works/apiTest/image/대용량.jpg'});\r",
+													"newFormData.push({ key: 'penCtImage', type: 'file', src: pm.collectionVariables.get(\"localImagePath\") + '대용량.jpg'});\r",
 													"\r",
 													"pm.request.body.formdata = newFormData;"
 												],
@@ -14660,12 +15441,14 @@
 													"\r",
 													"const serviceList = ['미지정','제모','시술코스','피부코스','초진지','차트지','반영구'];\r",
 													"const randomNum = Math.floor(Math.random() * 11)+1;\r",
-													"const imageUrl = \"C:/works/apiTest/image/updateImage/\";\r",
 													"const imageList = [];\r",
+													"// const imageUrl = pm.collectionVariables.get('localImagePath');\r",
+													"const imageUrl = pm.environment.get('IMAGE_PATH');\r",
+													"\r",
 													"\r",
 													"const forNum = 12;\r",
 													"for(let i=1; i <= forNum; i++){\r",
-													"        let str = imageUrl+'updateImage'+i+ '.jpg';\r",
+													"        let str = imageUrl + '/updateImage/'+'updateImage'+i+'.jpg';\r",
 													"        imageList.push(str)\r",
 													"}\r",
 													"\r",
@@ -14679,6 +15462,7 @@
 													"for(index in customImageList){\r",
 													"    imageList.push(imageUrl+customImageList[index])\r",
 													"};\r",
+													"\r",
 													"\r",
 													"const updateRandomImage = imageList[Math.floor(Math.random() * imageList.length)];\r",
 													"const serviceListRandom = serviceList[Math.floor(Math.random() * imageList.length)];\r",
@@ -15156,6 +15940,12 @@
 							"    });\r",
 							"}));\r",
 							"\r",
+							"pm.globals.set(\"testNotFoundResponseServerStatus\", String((desc) => {\r",
+							"    pm.test(`${desc} - 서버 응답 상태 확인`, () => {\r",
+							"        pm.response.to.have.status(404);\r",
+							"    });\r",
+							"}));\r",
+							"\r",
 							"pm.globals.set(\"testResponseTime\", String((desc) => {\r",
 							"    pm.test(`${desc} - 응답 시간 검증`, function () {\r",
 							"        pm.expect(pm.response.responseTime).to.be.below(2000);\r",
@@ -15177,6 +15967,16 @@
 							"        if (json.hasOwnProperty(\"data\") && json.data !== null && json.data !== undefined){\r",
 							"            pm.expect(json.data).to.be.not.empty;\r",
 							"        }\r",
+							"        pm.response.to.have.jsonSchema(schema);\r",
+							"    });\r",
+							"}));\r",
+							"\r",
+							"pm.collectionVariables.set(\"testSucessJsonEmptyData\", String((desc, json, schema) => {\r",
+							"    pm.test(`${desc} - 응답 JSON 데이터 확인`, () =>{\r",
+							"        pm.response.to.be.json;\r",
+							"        pm.expect(json).to.be.not.empty;\r",
+							"        pm.expect(json.status).to.be.eql(\"200\");\r",
+							"        pm.expect(json.result).to.be.eql(\"성공\");\r",
 							"        pm.response.to.have.jsonSchema(schema);\r",
 							"    });\r",
 							"}));\r",
@@ -15595,6 +16395,47 @@
 		},
 		{
 			"key": "testNm",
+			"value": ""
+		},
+		{
+			"key": "localImagePath",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "localUpdateImagePath",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "00177",
+			"value": ""
+		},
+		{
+			"key": "R2",
+			"value": ""
+		},
+		{
+			"key": "CVST_RSLT",
+			"value": ""
+		},
+		{
+			"key": "CNST_ID",
+			"value": ""
+		},
+		{
+			"key": "ACPT_CFR_ID",
+			"value": ""
+		},
+		{
+			"key": "testSucessJsonEmptyData",
+			"value": ""
+		},
+		{
+			"key": "CNST_NM",
+			"value": ""
+		},
+		{
 			"value": ""
 		}
 	]
