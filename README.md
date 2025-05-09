@@ -1,4 +1,4 @@
-# GitHub API 테스트 자동화 프로젝트
+# API 테스트 자동화 프로젝트
 - 이 프로젝트는 솔루션 Motion T API를 대상으로 기능 검증 수행하기 위해 구성된 테스트 자동화 저장소입니다.
 
 
@@ -19,7 +19,7 @@
 ## 테스트 실행 방법
 1. `env.postman_environment.json.json` 파일에 MOTION_T_ENV을 설정합니다.
 2. Postman/Newman 을 사용하여 테스트 스크립트를 실행합니다.
-
+3. newman run MOTION_T_API_TEST.postman_collection.json -e ./api_env_private/env.postman_environment.json --env-var IMAGE_PATH=./image/
 
 ## 인증 정보
 ```markdown
