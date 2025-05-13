@@ -12184,12 +12184,16 @@
 													"if (resJson.data && Object.keys(resJson.data).length > 0) {\r",
 													"    for (let key in resJson.data) {\r",
 													"        if (resJson.data.hasOwnProperty(key)) {\r",
-													"            if (key === 'PSPR_NO'){\r",
-													"                continue\r",
-													"            }\r",
+													"            if (key === 'PSPR_NO') continue\r",
+													"            if (key === 'SMS_AGR_YN') continue\r",
+													"            if (key === 'AD_SMS_AGR_YN') continue\r",
+													"            if (key === 'PRSN_INFO_AGR_YN') continue\r",
 													"            pm.collectionVariables.set(key, resJson.data[key]);\r",
 													"        }\r",
 													"    }\r",
+													"    pm.collectionVariables.set(\"SMS_AGR_YN\", true);\r",
+													"    pm.collectionVariables.set(\"AD_SMS_AGR_YN\", true);\r",
+													"    pm.collectionVariables.set(\"PRSN_INFO_AGR_YN\", true);\r",
 													"}"
 												],
 												"type": "text/javascript",
@@ -14758,7 +14762,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/ptnt/mopr/{{PAT_NO}}/00131",
+											"raw": "{{domain}}/ptnt/mopr/{{PAT_NO}}/{{VIST_SN}}",
 											"host": [
 												"{{domain}}"
 											],
@@ -14766,7 +14770,7 @@
 												"ptnt",
 												"mopr",
 												"{{PAT_NO}}",
-												"00131"
+												"{{VIST_SN}}"
 											]
 										}
 									},
