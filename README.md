@@ -21,11 +21,10 @@
 2. Postman/Newman 을 사용하여 테스트 스크립트를 실행합니다.
 3. newman run MOTION_T_API_TEST.postman_collection.json -e ./api_env_private/env.postman_environment.json --env-var IMAGE_PATH=./image/
 
-## 인증 정보
+## 인증 정보 및 호출 도메인
 ```markdown
-로그인을 제외한 모든 API 호출은 인증이 되어있어야하며,
-.env 파일에 존재하는 MOTION_T_ENV의 `accessToken`을 사용해야합니다.
-accessToken 은 로그인 시 자동으로 세팅됩니다.
+호출 도메인은 .env 파일 내 domain 을 사용해야하며 로그인을 제외한 모든 API 호출은 인증이 되어있어야합니다.
+.env 파일에 존재하는 MOTION_T_ENV의 `accessToken`이 사용되며, accessToken 은 로그인 시 자동으로 세팅됩니다.
 ```
 
 
